@@ -21,6 +21,7 @@ export const PokemonInfo = () => {
 	const ref = useRef<HTMLDivElement>(null)
 	useEffect(() => {
 		async function loadData() {
+			setLoading(true)
 			const { data } = await api.get<PokemonInfoType>(
 				`/pokemon/${activePokemon}`
 			)
@@ -29,9 +30,10 @@ export const PokemonInfo = () => {
 			)
 			setPokemon(data)
 			setPokemonSpecie(species)
+			setLoading(false)
 		}
 		loadData()
-	}, [activePokemon, setLoading])
+	}, [activePokemon])
 	if (!loading && pokemon && pokemonSpecie) {
 		return (
 			<section className={styles.pokemon_info} ref={ref}>

@@ -4,7 +4,6 @@ import {
 	PokeApiType,
 	Pokemon,
 } from '@/@types'
-import { Loading } from '@/components/Loading'
 import { PokemonInfo } from '@/components/PokemonInfo'
 import { Sidebar } from '@/components/Sidebar'
 import { useAppContext } from '@/contexts/appContext'
@@ -14,14 +13,10 @@ import Head from 'next/head'
 import { useEffect } from 'react'
 
 export default function Home({ pokemons }: { pokemons: Pokemon[] }) {
-	const { setPokemons, setLoading, setIsMobile, setColapsed, loading } =
-		useAppContext()
-
+	const { setPokemons, setIsMobile, setColapsed } = useAppContext()
 	useEffect(() => {
-		setLoading(true)
 		setPokemons(pokemons)
-		setLoading(false)
-	}, [pokemons, setLoading, setPokemons])
+	}, [pokemons, setPokemons])
 	useEffect(() => {
 		function handleResize() {
 			const a = window.innerWidth
@@ -63,14 +58,8 @@ export default function Home({ pokemons }: { pokemons: Pokemon[] }) {
 				<meta name="theme-color" content="#ffffff" />
 			</Head>
 			<main className={styles.main}>
-				{!loading ? (
-					<>
-						<Sidebar />
-						<PokemonInfo />
-					</>
-				) : (
-					<Loading />
-				)}
+				<Sidebar />
+				<PokemonInfo />
 			</main>
 		</>
 	)
