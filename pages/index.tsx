@@ -30,14 +30,10 @@ export default function Home({ pokemons }: { pokemons: Pokemon[] }) {
 		handleResize()
 	}, [])
 	useEffect(() => {
-		const onPageLoad = () => {
-			setLoading(true)
-		}
 		if (document.readyState !== 'complete') {
-			onPageLoad()
+			setLoading(true)
 		} else {
-			window.addEventListener('load', onPageLoad)
-			return () => window.removeEventListener('load', onPageLoad)
+			setLoading(false)
 		}
 	})
 	return (
