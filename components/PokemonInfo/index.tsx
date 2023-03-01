@@ -41,9 +41,9 @@ export const PokemonInfo = () => {
 							<Image
 								src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`}
 								alt={pokemon.name}
+								id={pokemon.name}
 								width={300}
 								height={300}
-								loading="eager"
 								placeholder="blur"
 								blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mOMrAcAATcA2mMRmZgAAAAASUVORK5CYII="
 								priority
