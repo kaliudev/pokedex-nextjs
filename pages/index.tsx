@@ -13,7 +13,7 @@ import Head from 'next/head'
 import { useEffect } from 'react'
 
 export default function Home({ pokemons }: { pokemons: Pokemon[] }) {
-	const { setPokemons, setIsMobile, setColapsed } = useAppContext()
+	const { setPokemons, setIsMobile, setColapsed, setLoading } = useAppContext()
 	useEffect(() => {
 		setPokemons(pokemons)
 	}, [pokemons, setPokemons])
@@ -29,6 +29,17 @@ export default function Home({ pokemons }: { pokemons: Pokemon[] }) {
 		}
 		handleResize()
 	}, [])
+	useEffect(() => {
+		const onPageLoad = () => {
+			setLoading(true)
+		}
+		if (document.readyState !== 'complete') {
+			onPageLoad()
+		} else {
+			window.addEventListener('load', onPageLoad)
+			return () => window.removeEventListener('load', onPageLoad)
+		}
+	})
 	return (
 		<>
 			<Head>

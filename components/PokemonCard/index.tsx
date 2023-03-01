@@ -33,6 +33,8 @@ export const PokemonCard = ({ pokemon }: { pokemon: Pokemon }) => {
 					alt={pokemon.name}
 					width={100}
 					height={100}
+					placeholder="blur"
+					blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mOMrAcAATcA2mMRmZgAAAAASUVORK5CYII="
 				/>
 			</div>
 			<div className={styles.pokemon_name}>{pokemon.name}</div>

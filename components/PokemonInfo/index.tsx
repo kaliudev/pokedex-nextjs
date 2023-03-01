@@ -17,11 +17,10 @@ import styles from './PokemonInfo.module.css'
 export const PokemonInfo = () => {
 	const [pokemon, setPokemon] = useState<PokemonInfoType>()
 	const [pokemonSpecie, setPokemonSpecie] = useState<PokemonSpecieType>()
-	const { activePokemon, loading, setLoading } = useAppContext()
+	const { activePokemon, loading } = useAppContext()
 	const ref = useRef<HTMLDivElement>(null)
 	useEffect(() => {
 		async function loadData() {
-			setLoading(true)
 			const { data } = await api.get<PokemonInfoType>(
 				`/pokemon/${activePokemon}`
 			)
@@ -30,7 +29,6 @@ export const PokemonInfo = () => {
 			)
 			setPokemon(data)
 			setPokemonSpecie(species)
-			setLoading(false)
 		}
 		loadData()
 	}, [activePokemon])
