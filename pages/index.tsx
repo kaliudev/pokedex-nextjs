@@ -28,14 +28,7 @@ export default function Home({ pokemons }: { pokemons: Pokemon[] }) {
 			}
 		}
 		handleResize()
-	}, [])
-	useEffect(() => {
-		if (document.readyState !== 'complete') {
-			setLoading(true)
-		} else {
-			setLoading(false)
-		}
-	})
+	}, [setColapsed, setIsMobile])
 	return (
 		<>
 			<Head>

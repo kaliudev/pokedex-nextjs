@@ -32,6 +32,9 @@ export const PokemonInfo = () => {
 		}
 		loadData()
 	}, [activePokemon])
+	const myLoader = () => {
+		return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png?w=${100}&q=${75}`
+	}
 	if (!loading && pokemon && pokemonSpecie) {
 		return (
 			<section className={styles.pokemon_info} ref={ref}>
@@ -39,12 +42,12 @@ export const PokemonInfo = () => {
 					<div className={styles.pokemon_info_header}>
 						<div className={styles.pokemon_image}>
 							<Image
+								loader={myLoader}
 								src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`}
 								alt={pokemon.name}
 								width={300}
 								height={300}
-								placeholder="blur"
-								blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mOMrAcAATcA2mMRmZgAAAAASUVORK5CYII="
+								loading="lazy"
 							/>
 						</div>
 						<div className={styles.pokemon_info_header_content}>

@@ -38,7 +38,7 @@
 	border-radius: 4px;
 }
 .pokemon_image img {
-	width: 300px;
+	width: 100%;
 	height: auto;
 }
 .pokemon_name {
@@ -122,6 +122,7 @@
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	gap: 32px;
+	width: 100%;
 }
 .pokemon_content_card {
 	display: flex;
