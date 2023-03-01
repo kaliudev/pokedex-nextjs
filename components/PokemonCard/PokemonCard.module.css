@@ -1,0 +1,77 @@
+@keyframes height {
+	from {
+		transform: scaleY(0);
+	}
+	to {
+		transform: scaleY(100%);
+	}
+}
+.pokemon_card {
+	display: flex;
+	width: 100%;
+	box-shadow: 0 -2px var(--color-outline);
+	padding: 16px 32px;
+	gap: 8px;
+	justify-content: space-between;
+	cursor: pointer;
+	align-items: center;
+	transition: all ease 300ms;
+	position: relative;
+}
+.pokemon_card.enabled::before {
+	content: '';
+	width: 2px;
+	height: 100%;
+	background: var(--color-primary);
+	position: absolute;
+	animation: height 300ms ease-in-out;
+	left: 0;
+}
+.pokemon_card:hover {
+	background: var(--color-states-white-overlay-hover);
+}
+.pokemon_name {
+	width: 100%;
+	text-transform: capitalize;
+	font-weight: 600;
+	font-size: var(--font-size-16);
+}
+.pokemon_types {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	justify-content: flex-end;
+}
+.pokemon_type {
+	display: flex;
+	align-items: center;
+}
+.pokemon_type p {
+	font-size: var(--font-size-10);
+	text-transform: uppercase;
+	font-weight: 900;
+	color: var(--color-on-primary-medium-emphasis);
+}
+.pokemon_image {
+	width: 100%;
+	height: 100px;
+	position: relative;
+}
+.pokemon_image img {
+	object-fit: contain;
+	position: relative;
+}
+.pokemon_number {
+	display: flex;
+	align-items: center;
+}
+.pokemon_number span {
+	display: flex;
+	font-weight: 700;
+	align-items: center;
+	font-size: var(--font-size-12);
+	color: var(--color-on-surface-disabled);
+}
+.pokemon_number span::before {
+	content: '#';
+}

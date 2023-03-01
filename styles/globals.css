@@ -1,0 +1,450 @@
+:root {
+	--color-01-dp: linear-gradient(
+			0deg,
+			rgba(255, 255, 255, 0.05),
+			rgba(255, 255, 255, 0.05)
+		),
+		#121212;
+	--color-02-dp: linear-gradient(
+			0deg,
+			rgba(255, 255, 255, 0.07),
+			rgba(255, 255, 255, 0.07)
+		),
+		#121212;
+	--color-03-dp: linear-gradient(
+			0deg,
+			rgba(255, 255, 255, 0.08),
+			rgba(255, 255, 255, 0.08)
+		),
+		#121212;
+	--color-04-dp: linear-gradient(
+			0deg,
+			rgba(255, 255, 255, 0.09),
+			rgba(255, 255, 255, 0.09)
+		),
+		#121212;
+	--color-06-dp: linear-gradient(
+			0deg,
+			rgba(255, 255, 255, 0.11),
+			rgba(255, 255, 255, 0.11)
+		),
+		#121212;
+	--color-08-dp: linear-gradient(
+			0deg,
+			rgba(255, 255, 255, 0.12),
+			rgba(255, 255, 255, 0.12)
+		),
+		#121212;
+	--color-12-dp: linear-gradient(
+			0deg,
+			rgba(255, 255, 255, 0.14),
+			rgba(255, 255, 255, 0.14)
+		),
+		#121212;
+	--color-16-dp: linear-gradient(
+			0deg,
+			rgba(255, 255, 255, 0.15),
+			rgba(255, 255, 255, 0.15)
+		),
+		#121212;
+	--color-24-dp: linear-gradient(
+			0deg,
+			rgba(255, 255, 255, 0.16),
+			rgba(255, 255, 255, 0.16)
+		),
+		#121212;
+	--color-surface: rgba(18, 18, 18, 1);
+	--color-types-water: rgba(51, 153, 255, 1);
+	--color-types-normal: rgba(170, 170, 153, 1);
+	--color-types-fire: rgba(255, 68, 34, 1);
+	--color-types-electric: rgba(255, 204, 51, 1);
+	--color-types-grass: rgba(119, 204, 85, 1);
+	--color-types-ice: rgba(102, 204, 255, 1);
+	--color-types-fighting: rgba(187, 85, 68, 1);
+	--color-types-poison: rgba(168, 84, 151, 1);
+	--color-types-ground: rgba(221, 187, 85, 1);
+	--color-types-flying: rgba(136, 153, 255, 1);
+	--color-types-psychic: rgba(255, 85, 153, 1);
+	--color-types-bug: rgba(170, 187, 34, 1);
+	--color-types-rock: rgba(187, 170, 102, 1);
+	--color-types-ghost: rgba(102, 102, 187, 1);
+	--color-types-dragon: rgba(119, 102, 238, 1);
+	--color-types-dark: rgba(119, 85, 68, 1);
+	--color-types-steel: rgba(170, 170, 187, 1);
+	--color-types-fairy: rgba(238, 153, 238, 1);
+	--color-red: rgba(234, 94, 120, 1);
+	--color-primary: rgba(155, 96, 241, 1);
+	--color-primary-hover: linear-gradient(
+			0deg,
+			rgba(255, 255, 255, 0.04),
+			rgba(255, 255, 255, 0.04)
+		),
+		var(--color-primary);
+	--color-primary-pressed: linear-gradient(
+			0deg,
+			rgba(255, 255, 255, 0.1),
+			rgba(255, 255, 255, 0.1)
+		)
+		var(--color-primary);
+	--color-white: rgba(255, 255, 255, 1);
+	--color-on-surface-high-emphasis: rgba(255, 255, 255, 0.87);
+	--color-on-surface-medium-emphasis: rgba(255, 255, 255, 0.6);
+	--color-on-surface-disabled: rgba(255, 255, 255, 0.38);
+	--color-on-primary-high-emphasis: rgba(0, 0, 0, 1);
+	--color-on-primary-medium-emphasis: rgba(0, 0, 0, 0.74);
+	--color-on-primary-disabled: rgba(0, 0, 0, 0.38);
+	--color-states-white-overlay-hover: rgba(255, 255, 255, 0.04);
+	--color-states-white-overlay-focus: rgba(255, 255, 255, 0.12);
+	--color-states-white-overlay-pressed: rgba(255, 255, 255, 0.1);
+	--color-states-white-overlay-dragged: rgba(255, 255, 255, 0.12);
+	--color-states-white-overlay-selected: rgba(255, 255, 255, 0.08);
+	--color-states-black-overlay: rgba(0, 0, 0, 0.5);
+	--color-outline: rgba(255, 255, 255, 0.12);
+	--font-size-32: 3.2rem;
+	--font-size-24: 2.4rem;
+	--font-size-16: 1.6rem;
+	--font-size-14: 1.4rem;
+	--font-size-12: 1.2rem;
+	--font-size-10: 1rem;
+	--font-size-8: 0.8rem;
+	--font-inter: 'Inter', sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+html,
+body {
+	max-width: 100vw;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	background: var(--color-surface);
+	color: var(--color-on-surface-high-emphasis);
+	font-family: var(--font-inter);
+	font-size: 62.5%;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	font-size: var(--font-size-16);
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+	margin: 0;
+}
+
+h1 {
+	font-size: var(--font-size-32);
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+	list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+	scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+	min-height: 100vh;
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+	max-width: 100%;
+	display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+	html:focus-within {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+.water::before,
+.normal::before,
+.fire::before,
+.electric::before,
+.grass::before,
+.ice::before,
+.fighting::before,
+.poison::before,
+.ground::before,
+.flying::before,
+.psychic::before,
+.bug::before,
+.rock::before,
+.ghost::before,
+.dragon::before,
+.dark::before,
+.steel::before,
+.fairy::before {
+	width: 16px;
+	height: 16px;
+	content: '';
+	display: flex;
+	align-items: center;
+}
+
+.water::before {
+	background: url('/images/icons/water.png') no-repeat;
+}
+.normal::before {
+	background: url('/images/icons/normal.png') no-repeat;
+}
+.fire::before {
+	background: url('/images/icons/fire.png') no-repeat;
+}
+.electric::before {
+	background: url('/images/icons/electric.png') no-repeat;
+}
+.grass::before {
+	background: url('/images/icons/grass.png') no-repeat;
+}
+.ice::before {
+	background: url('/images/icons/ice.png') no-repeat;
+}
+.fighting::before {
+	background: url('/images/icons/fighting.png') no-repeat;
+}
+.poison::before {
+	background: url('/images/icons/poison.png') no-repeat;
+}
+.ground::before {
+	background: url('/images/icons/ground.png') no-repeat;
+}
+.flying::before {
+	background: url('/images/icons/flying.png') no-repeat;
+}
+.psychic::before {
+	background: url('/images/icons/psychic.png') no-repeat;
+}
+.bug::before {
+	background: url('/images/icons/bug.png') no-repeat;
+}
+.rock::before {
+	background: url('/images/icons/rock.png') no-repeat;
+}
+.ghost::before {
+	background: url('/images/icons/ghost.png') no-repeat;
+}
+.dragon::before {
+	background: url('/images/icons/dragon.png') no-repeat;
+}
+.dark::before {
+	background: url('/images/icons/dark.png') no-repeat;
+}
+.steel::before {
+	background: url('/images/icons/steel.png') no-repeat;
+}
+.fairy::before {
+	background: url('/images/icons/fairy.png') no-repeat;
+}
+
+.water,
+.normal,
+.fire,
+.electric,
+.grass,
+.ice,
+.fighting,
+.poison,
+.ground,
+.flying,
+.psychic,
+.bug,
+.rock,
+.ghost,
+.dragon,
+.dark,
+.steel,
+.fairy {
+	font-size: var(--font-size-14);
+	color: var(--color-on-primary-high-emphasis);
+	display: flex;
+	align-items: center;
+	padding: 8px;
+	gap: 4px;
+	border-radius: 4px;
+}
+
+.water {
+	background: var(--color-types-water);
+}
+.normal {
+	background: var(--color-types-normal);
+}
+.fire {
+	background: var(--color-types-fire);
+}
+.electric {
+	background: var(--color-types-electric);
+}
+.grass {
+	background: var(--color-types-grass);
+}
+.ice {
+	background: var(--color-types-ice);
+}
+.fighting {
+	background: var(--color-types-fighting);
+}
+.poison {
+	background: var(--color-types-poison);
+}
+.ground {
+	background: var(--color-types-ground);
+}
+.flying {
+	background: var(--color-types-flying);
+}
+.psychic {
+	background: var(--color-types-psychic);
+}
+.bug {
+	background: var(--color-types-bug);
+}
+.rock {
+	background: var(--color-types-rock);
+}
+.ghost {
+	background: var(--color-types-ghost);
+}
+.dragon {
+	background: var(--color-types-dragon);
+}
+.dark {
+	background: var(--color-types-dark);
+}
+.steel {
+	background: var(--color-types-steel);
+}
+.fairy {
+	background: var(--color-types-fairy);
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+	width: 12px;
+}
+::-webkit-scrollbar-track {
+	background: var(--color-01-dp);
+}
+::-webkit-scrollbar-thumb {
+	background: #121212;
+	width: 2px;
+	border-radius: 6px;
+	border: 4px solid #1e1e1e;
+}
+
+.rank-1 {
+	background: #f34444;
+}
+.rank-2 {
+	background: #ff7f0f;
+}
+.rank-3 {
+	background: #ffdd57;
+}
+.rank-4 {
+	background: #a0e515;
+}
+.rank-5 {
+	background: #23cd5e;
+}
+.rank-6 {
+	background: #00c2b8;
+}
+
+.not-very-effective {
+	background: #ffa1a1;
+}
+.normal-damage {
+	background: var(--color-on-surface-high-emphasis);
+}
+.super-effective {
+	background: #79ffa6;
+}
+.no-effect {
+	color: var(--color-on-surface-disabled) !important;
+}
+/* .normal-damage,
+.super-effective,
+.not-very-effective,
+.no-effect {
+	border: 10px solid rgba(0, 255, 0, 0.6);
+} */
+sub,
+sup {
+	font-size: var(--font-size-12);
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+@media (max-width: 575.98px) {
+	html,
+	body {
+		overflow-x: hidden !important;
+		overflow-y: scroll;
+		width: 100vw;
+		max-width: 100vw;
+	}
+	::-webkit-scrollbar {
+		width: 0;
+	}
+}
