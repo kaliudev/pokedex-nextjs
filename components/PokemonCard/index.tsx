@@ -4,7 +4,7 @@ import Image from 'next/image'
 import styles from './PokemonCard.module.css'
 
 export const PokemonCard = ({ pokemon }: { pokemon: Pokemon }) => {
-	const { setActivePokemon, activePokemon, setColapsed, isMobile } =
+	const { setActivePokemon, activePokemon, setColapsed, isMobile, setLoading } =
 		useAppContext()
 	const handleClickCard = () => {
 		setActivePokemon(pokemon.name)
@@ -13,6 +13,7 @@ export const PokemonCard = ({ pokemon }: { pokemon: Pokemon }) => {
 		} else {
 			setColapsed(false)
 		}
+		setLoading(true)
 	}
 	return (
 		<div

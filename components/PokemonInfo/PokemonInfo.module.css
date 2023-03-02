@@ -3,6 +3,7 @@
 	flex-direction: column;
 	overflow-y: scroll;
 	width: 100%;
+	position: relative;
 }
 .pokemon_info_content {
 	display: flex;

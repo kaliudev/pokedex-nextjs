@@ -13,7 +13,7 @@ export const EvolvesFrom = ({
 	name: string
 	divRef: React.RefObject<HTMLDivElement>
 }) => {
-	const { setActivePokemon } = useAppContext()
+	const { setActivePokemon, setLoading } = useAppContext()
 	const [evolvesFrom, setEvolvesFrom] = useState<EvolvesFromType[]>([
 		{
 			from_name: name,
@@ -44,6 +44,7 @@ export const EvolvesFrom = ({
 								behavior: 'smooth',
 								top: -500,
 							})
+							setLoading(true)
 						}}
 					>
 						<Image

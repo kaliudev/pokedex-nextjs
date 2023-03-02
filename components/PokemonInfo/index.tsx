@@ -17,7 +17,7 @@ import styles from './PokemonInfo.module.css'
 export const PokemonInfo = () => {
 	const [pokemon, setPokemon] = useState<PokemonInfoType>()
 	const [pokemonSpecie, setPokemonSpecie] = useState<PokemonSpecieType>()
-	const { activePokemon, loading } = useAppContext()
+	const { activePokemon, loading, setLoading } = useAppContext()
 	const ref = useRef<HTMLDivElement>(null)
 	useEffect(() => {
 		async function loadData() {
@@ -32,9 +32,10 @@ export const PokemonInfo = () => {
 		}
 		loadData()
 	}, [activePokemon])
-	if (!loading && pokemon && pokemonSpecie) {
+	if (pokemon && pokemonSpecie) {
 		return (
 			<section className={styles.pokemon_info} ref={ref}>
+				{loading ? <Loading /> : null}
 				<div className={styles.pokemon_info_content}>
 					<div className={styles.pokemon_info_header}>
 						<div className={styles.pokemon_image}>
@@ -47,6 +48,7 @@ export const PokemonInfo = () => {
 								placeholder="blur"
 								blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mOMrAcAATcA2mMRmZgAAAAASUVORK5CYII="
 								priority
+								onLoadingComplete={() => setLoading(false)}
 							/>
 						</div>
 						<div className={styles.pokemon_info_header_content}>
