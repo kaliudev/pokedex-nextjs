@@ -36,7 +36,13 @@ export const PokemonInfo = () => {
 		return (
 			<section className={styles.pokemon_info} ref={ref}>
 				{loading ? <Loading /> : null}
-				<div className={styles.pokemon_info_content}>
+				<div
+					className={
+						loading
+							? styles.pokemon_info_content__hide
+							: styles.pokemon_info_content
+					}
+				>
 					<div className={styles.pokemon_info_header}>
 						<div className={styles.pokemon_image}>
 							<Image
