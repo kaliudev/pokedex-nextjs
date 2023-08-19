@@ -7,7 +7,7 @@ export const Search = () => {
 		<div className={styles.search}>
 			<input
 				type="text"
-				placeholder="Buscar..."
+				placeholder="Search..."
 				value={search}
 				onChange={(e: FormEvent<HTMLInputElement>) =>
 					setSearch(e.currentTarget.value)

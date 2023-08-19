@@ -42,12 +42,13 @@
 }
 .colapse_menu {
 	background: var(--color-primary);
-	width: 16px;
+	width: 20px;
 	height: 40px;
 	position: absolute;
 	border: 0;
-	cursor: pointer;
+	cursor: pointer !important;
 	display: flex;
+	z-index: 10;
 	align-items: center;
 	justify-content: center;
 	top: 50%;
